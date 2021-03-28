@@ -69,6 +69,12 @@ export const constantRoutes = [
         meta: { title: '项目列表', icon: 'table' }
       },
       {
+        path: 'pdetail',
+        name: 'ProjectDetail',
+        component: () => import('@/views/projectDetail/index'),
+        meta: { title: '项目详情', icon: 'table' }
+      },
+      {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
