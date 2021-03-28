@@ -1,7 +1,12 @@
 <template>
   <div class="app-container">
+<<<<<<< HEAD
     <el-card style="margin-bottom:20px;padding-bottom:20px;height:10.625rem" class="box-card projectList"  v-for="(project,index) in Projects" :key="project" >
       <a  @click="showDetail(index)" >
+=======
+    <el-card style="margin-bottom:20px;padding-bottom:20px;height:10.625rem" class="box-card projectList"  v-for="project in Projects" :key="project" >
+      <a >
+>>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
         <div class="left" style="float:left;width:48.5%">
           <div class="title">
             <p>{{project.title}}</p>
@@ -70,8 +75,11 @@ export default {
     return {
       list: null,
       listLoading: true,
+<<<<<<< HEAD
 
       centerDialogVisible: false, //控制详情显式
+=======
+>>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
       Projects:[
         {
           title:'人工智能项目111111',
@@ -81,7 +89,15 @@ export default {
           },
           info:'该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
           environment:'Tensorflow 1.8',
+<<<<<<< HEAD
           member:'张凤荔、王瑞锦、XXX、XXX、XXX',
+=======
+          member:[
+            '张凤荔',
+            '王瑞锦',
+            'XXX'
+          ],
+>>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
           dataset:[],
           detail:[],
         }, 
@@ -96,17 +112,22 @@ export default {
           dataset:[],
           detail:[],
         }, 
+<<<<<<< HEAD
       ],
 
       Pj_Detail:[
 
       ],
+=======
+      ]
+>>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
     }
   },
   created() {
     
   },
   methods: {
+<<<<<<< HEAD
     showDetail(index){
       //用来展示详情
       this.centerDialogVisible = true
@@ -115,6 +136,9 @@ export default {
 
       console.log(this.Pj_Detail)
     }
+=======
+   
+>>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
   }
 }
 </script>
