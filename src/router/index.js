@@ -66,13 +66,27 @@ export const constantRoutes = [
         path: 'pInfo',
         name: 'ProjectsInfo',
         component: () => import('@/views/table/index'),
-        meta: { title: '项目列表', icon: 'table' }
+        meta: { title: '项目列表', icon: 'table' },
+        children:[
+          
+        ]
+      },
+      {
+        path: 'addProject',
+        name: 'AddProject',
+        component: () => import('@/views/addProjects/index'),
+        meta: { title: '新增项目', icon: 'form' },
+        children:[
+          
+        ]
       },
       {
         path: 'pdetail',
         name: 'ProjectDetail',
         component: () => import('@/views/projectDetail/index'),
-        meta: { title: '项目详情', icon: 'table' }
+        meta: { title: '项目详情', icon: 'table' },
+        hidden:true,
+
       },
       {
         path: 'tree',

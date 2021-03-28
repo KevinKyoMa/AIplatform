@@ -1,12 +1,7 @@
 <template>
   <div class="app-container">
-<<<<<<< HEAD
-    <el-card style="margin-bottom:20px;padding-bottom:20px;height:10.625rem" class="box-card projectList"  v-for="(project,index) in Projects" :key="project" >
-      <a  @click="showDetail(index)" >
-=======
-    <el-card style="margin-bottom:20px;padding-bottom:20px;height:10.625rem" class="box-card projectList"  v-for="project in Projects" :key="project" >
-      <a >
->>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
+    <el-card style="margin-bottom:20px;padding-bottom:20px;height:10.625rem" class="box-card projectList"  v-for="(project) in Projects" :key="project" >
+      <a  @click="toDetail(project)" >
         <div class="left" style="float:left;width:48.5%">
           <div class="title">
             <p>{{project.title}}</p>
@@ -27,13 +22,12 @@
             </span>
           </div>
         </div>
-        <el-divider direction="vertical" style="height：8rem;float:left"></el-divider>
+        <el-divider direction="vertical" style="height:8rem;float:left;" ></el-divider>
         <div class="right" style="float:left;width:48.5%;background: #80808021;padding:15px 8px 15px 8px">
           <div class="Info-2">
             <p style="margin:0;height:6rem">{{project.info}}</p>
           </div>
         </div>
-        
       </a>
     </el-card>
     <el-pagination
@@ -75,11 +69,8 @@ export default {
     return {
       list: null,
       listLoading: true,
-<<<<<<< HEAD
 
       centerDialogVisible: false, //控制详情显式
-=======
->>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
       Projects:[
         {
           title:'人工智能项目111111',
@@ -89,15 +80,7 @@ export default {
           },
           info:'该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
           environment:'Tensorflow 1.8',
-<<<<<<< HEAD
           member:'张凤荔、王瑞锦、XXX、XXX、XXX',
-=======
-          member:[
-            '张凤荔',
-            '王瑞锦',
-            'XXX'
-          ],
->>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
           dataset:[],
           detail:[],
         }, 
@@ -112,33 +95,32 @@ export default {
           dataset:[],
           detail:[],
         }, 
-<<<<<<< HEAD
       ],
 
       Pj_Detail:[
 
       ],
-=======
-      ]
->>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
     }
   },
   created() {
     
   },
   methods: {
-<<<<<<< HEAD
     showDetail(index){
-      //用来展示详情
+      //用来展示详情(弹窗方式)
       this.centerDialogVisible = true
 
       this.Pj_Detail = this.Projects[index]
 
       console.log(this.Pj_Detail)
+    },
+
+    toDetail(detail){
+      //跳转方式展示详情页面
+
+      this.$router.push({name:'ProjectDetail',params:{data:detail}})
+
     }
-=======
-   
->>>>>>> 933556ba3d8b371bc477df6b77b6400c4773eea1
   }
 }
 </script>
