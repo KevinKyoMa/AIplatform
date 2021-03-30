@@ -39,8 +39,11 @@
             <el-form-item label="项目简介">
                 <el-input type="textarea" v-model="form.info"></el-input>
             </el-form-item>
+            <el-form-item label="项目正文">
+                <el-input type="textarea" v-model="form.detail"></el-input>
+            </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="onSubmit">立即创建</el-button>
+                <el-button type="primary" @click="onSubmit">添加项目</el-button>
                 <el-button>取消</el-button>
             </el-form-item>
 
@@ -61,6 +64,7 @@
           environment: [],
           members:[],
           info: '',
+          detail: '',
         }
       }
     },

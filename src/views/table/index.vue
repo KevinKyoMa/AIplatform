@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
-    <el-card style="margin-bottom:20px;padding-bottom:20px;height:10.625rem" class="box-card projectList"  v-for="(project) in Projects" :key="project" >
-      <a  @click="toDetail(project)" >
+    <el-card style="margin-bottom:20px;padding-bottom:20px;height:10.625rem" class="box-card projectList"   v-for="(project) in Projects" :key="project"  >
+      <a  @click="toDetail(project)"  v-if="Projects">
         <div class="left" style="float:left;width:48.5%">
           <div class="title">
             <p>{{project.title}}</p>
@@ -17,8 +17,12 @@
               <span>{{project.environment}}</span>
             </span>
             <span class="pro-2" style="display:block;padding-bottom:8px">
+              <span>项目状态：</span>
+              <span>{{project.status}}</span>
+            </span>
+            <span class="pro-2" style="display:block;padding-bottom:8px">
               <span>团队情况: </span>
-              <span>{{mber}}</span>
+              <span>{{project.member}}</span>
             </span>
           </div>
         </div>
@@ -73,25 +77,28 @@ export default {
       centerDialogVisible: false, //控制详情显式
       Projects:[
         {
-          title:'人工智能项目111111',
+          title: '人工智能项目111111',
           dateRange:{
-            start:'2020-01-01',
-            end:'2022-01-01'
+            start: '2020-01-01',
+            end: '2022-01-01'
           },
-          info:'该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
-          environment:'Tensorflow 1.8',
-          member:'张凤荔、王瑞锦、XXX、XXX、XXX',
-          dataset:[],
-          detail:[],
+          info: '该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
+          environment: 'Tensorflow 1.8',
+          member: '张凤荔、王瑞锦、XXX、XXX、XXX',
+          status: '进行中',
+          dataset: [],
+          detail: [],
         }, 
         {
-          title:'人工智能项目22222',
+          title: '人工智能项目22222',
           dateRange:{
-            start:'2020-01-01',
-            end:'2022-01-01'
+            start: '2020-01-01',
+            end: '2022-01-01'
           },
-          info:'该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
-          environment:'Tensorflow 1.8',
+          info: '该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
+          environment: 'Tensorflow 1.8',
+          member: '王瑞锦、张志扬、XXX',
+          status: '进行中',
           dataset:[],
           detail:[],
         }, 
@@ -118,7 +125,7 @@ export default {
     toDetail(detail){
       //跳转方式展示详情页面
 
-      this.$router.push({name:'ProjectDetail',params:{data:detail}})
+      this.$router.push({name:'ProjectDetail',params: {data: detail}})
 
     }
   }

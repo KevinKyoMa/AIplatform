@@ -41,10 +41,33 @@
                         <el-button style="float: right; padding: 3px 0" type="text">批量下载</el-button>
                     </div>
                     <div class="resourceBox">
-                        <div class="title">论文列表</div>
-                        <div v-for="o in 5" :key="o">
-                            <a style="color:#71b8f5;" >论文11111</a>
-                        </div>    
+                        <div class="title" style="padding:12px 0">论文列表</div>
+                        <div class="container" style="background-color:#dfdfdf4d;padding:10px">
+                            <div v-for="o in 5" :key="o">
+                                <a style="color:#71b8f5;display:block;margin-bottom:5px" >论文11111</a>
+                            </div>
+                        </div>
+
+                        <div class="title" style="padding:12px 0">数据集</div>
+                        <div class="container" style="background-color:#dfdfdf4d;padding:10px">
+                            <div v-for="o in 4" :key="o">
+                                <a style="color:#71b8f5;display:block;margin-bottom:5px" >数据集 {{o}}</a>
+                            </div>
+                        </div>
+
+                        <div class="title" style="padding:12px 0">算法模型</div>
+                        <div class="container" style="background-color:#dfdfdf4d;padding:10px">
+                            <div v-for="o in 2" :key="o">
+                                <a style="color:#71b8f5;display:block;margin-bottom:5px" >模型 {{o}}</a>
+                            </div>
+                        </div>
+
+                        <div class="title" style="padding:12px 0">代码包</div>
+                        <div class="container" style="background-color:#dfdfdf4d;padding:10px">
+                            <div v-for="o in 1" :key="o">
+                                <a style="color:#71b8f5;display:block;margin-bottom:5px" >代码包 {{o}}</a>
+                            </div>
+                        </div>
                     </div>
                 </el-card>
             </el-col>
@@ -59,25 +82,25 @@ export default {
         return{
             Projects:[
                 {
-                title:'人工智能项目111111',
+                title: '人工智能项目111111',
                 dateRange:{
-                    start:'2020-01-01',
-                    end:'2022-01-01'
+                    start: '2020-01-01',
+                    end: '2022-01-01'
                 },
-                info:'该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
-                environment:'Tensorflow 1.8',
-                member:'张凤荔、王瑞锦、XXX、XXX、XXX',
+                info: '该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
+                environment: 'Tensorflow 1.8',
+                member: '张凤荔、王瑞锦、XXX、XXX、XXX',
                 dataset:[],
                 detail:[],
                 }, 
                 {
-                title:'人工智能项目22222',
+                title: '人工智能项目22222',
                 dateRange:{
-                    start:'2020-01-01',
-                    end:'2022-01-01'
+                    start: '2020-01-01',
+                    end: '2022-01-01'
                 },
-                info:'该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
-                environment:'Tensorflow 1.8',
+                info: '该项目立项于2020年1月1日xxxx该段是测试文字该段是测试文字该段是测试文字该段是测试文字该段是测试文字',
+                environment: 'Tensorflow 1.8',
                 dataset:[],
                 detail:[],
                 }, 

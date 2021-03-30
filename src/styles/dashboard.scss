@@ -1,0 +1,49 @@
+.dashboard-container {
+    .box-card {
+        line-height:1.8rem;
+        .title {
+            text-align:center;
+            font-size: 1.5rem;
+        }
+        .main-body {
+
+            .title-2 {
+                font-size: 1.15rem;
+                font-weight: 600;
+            }
+        }
+        
+        .project-info {
+            padding: 20px 10px 20px 10px;
+
+            .title {
+                font-size: 1.2rem;
+            }
+
+            .number-total {
+                color: #6767f0;
+                padding: 0 20px 0 20px;
+                font-size: 1.8rem;
+                font-family: '微软雅黑';
+            }
+
+            .number-processing {
+                color: #6df061;
+                padding: 0 20px 0 20px;
+                font-size: 1.6rem;
+                font-family: '微软雅黑';
+            }
+
+            .number-done {
+                color: #4d4d4d;
+                padding: 0 20px 0 20px;
+                font-size: 1.6rem;
+                font-family: '微软雅黑';
+            }
+        }
+        
+
+    }
+    
+
+}
