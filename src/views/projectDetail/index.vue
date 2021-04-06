@@ -30,7 +30,16 @@
                         </div>
                     </div>
                     <div class="detail">
-                        {{Pj_Detail.info}}
+                        <mavon-editor
+                            ref="md"
+                            :subfield="false" 
+                            :defaultOpen="'preview'" 
+                            :toolbarsFlag="false"
+                            :editable="false" 
+                            :scrollStyle="true" 
+                            :ishljs="true"
+                            :value="Pj_Detail.info"
+                            />
                     </div>
                 </el-card>
             </el-col>

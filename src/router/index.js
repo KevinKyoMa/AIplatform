@@ -55,6 +55,8 @@ export const constantRoutes = [
     }]
   },
 
+
+  //项目管理路由
   {
     path: '/projects',
     component: Layout,
@@ -100,6 +102,32 @@ export const constantRoutes = [
         component: () => import('@/views/datacharts/index'),
         meta: { title: 'DataCharts', icon: 'table' }
       }
+    ]
+  },
+
+
+  //资源管理路由
+  {
+    path: '/resources',
+    component: Layout,
+    redirect: '/resources/list',
+    name: 'ResourceManage',
+    meta: { title: '资源管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'list',
+        name: 'ResourceList',
+        component: () => import('@/views/resourceList/index'),
+        meta: { title: '资源列表', icon: 'table' },
+        children:[]
+      },
+      {
+        path: 'add',
+        name: 'AddResouces',
+        component: () => import('@/views/addResource/index'),
+        meta: { title: '添加资源', icon: 'table' },
+        children:[]
+      },
     ]
   },
 

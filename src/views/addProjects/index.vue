@@ -40,7 +40,14 @@
                 <el-input type="textarea" v-model="form.info"></el-input>
             </el-form-item>
             <el-form-item label="项目正文">
-                <el-input type="textarea" v-model="form.detail"></el-input>
+                <div class="markdown">
+                    <mavon-editor
+                        ref="md"
+                        v-model="mavonValue"
+                        @imgAdd="uploadImg"
+                        @change="change"
+                        :codeStyle="configs.codeStyle"/>
+                </div>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="onSubmit">添加项目</el-button>
@@ -53,6 +60,7 @@
 
 <script>
   export default {
+      
     data() {
       return {
         form: {
@@ -65,13 +73,42 @@
           members:[],
           info: '',
           detail: '',
-        }
+        },
+        mavonValue: '',//markdown内容
+        mavonHtml: '',//markdown的Html内容
+        configs:{ //markdown的设置
+            codeStyle: 'vs2015', // 代码风格配色，
+        },
       }
     },
     methods: {
       onSubmit() {
-        console.log('submit!');
-      }
+          
+          console.log(this.mavonValue)
+          console.log(this.mavonHtml)
+          console.log('submit!');
+      },
+    uploadImg(pos, file) {
+        var formData = new FormData();
+        formData.append('image', file);
+        this.$axios({
+            url: '文件服务器地址',
+            method: "post",
+            data: formData,
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }).then((url) => {
+            //使用服务器返回的图片地址替换原图片地址
+            $vm.$img2Url(pos, url);
+        })
+    },
+      //所有的操作都被解析重新渲染
+      change(value, render){
+          //render为 markdown解析后的结果[html]
+          this.html = render
+      },
+
     }
   }
 </script>
